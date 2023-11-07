@@ -1,4 +1,4 @@
-<?php include_once('../partials/header.php'); ?>
+<?php include_once('../../front/partials/header.php'); ?>
 
 <p class="test">mettre ici le raccourciceur de liens</p>
 
