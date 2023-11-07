@@ -1,6 +1,7 @@
 <?php
 
 if (isset($_GET["short"])) {
+    
     $shortLink = $_GET["short"];
 
     // Effectuez une recherche dans la base de données pour trouver le lien d'origine associé au raccourci

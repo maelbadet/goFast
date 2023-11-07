@@ -29,4 +29,5 @@ function generateRandomShortLink() {
     $bytes = random_bytes($length);
     return bin2hex($bytes);
 }
+
 ?>
