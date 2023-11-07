@@ -1,6 +1,7 @@
 
 
 <?php include_once('../partials/header.php'); 
+
 $url_crud = "http://localhost/LiveCampus/php/cours_php_2/goFast/back/crud/";
 $create = $url_crud . "create.php";
 $read = $url_crud . "read.php";
