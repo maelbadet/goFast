@@ -2,7 +2,7 @@
 
 <?php include_once('../partials/header.php'); 
 
-$url_crud = $root_url ."back/crud/";
+$url_crud = $root_url ."front/crud/";
 $create = $url_crud . "create.php";
 $read = $url_crud . "read.php";
 $update = $url_crud . "update.php";
