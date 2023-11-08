@@ -9,11 +9,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     echo "<br>";
     echo " password : " . $mdpUser;
 
-    $result = $database->query("SELECT * FROM utilisateur WHERE email = "$emailUser" AND mot_de_passe = " $mdpUser);
-    $test = $result->fetch_assoc();
-    $idUser = $result[0]['id'];
+    $query = "SELECT * FROM utilisateur WHERE email = '".$emailUser."' AND mot_de_passe = '".$mdpUser."'";
+    $result = $database->query($query);
+    if($result){       
+        $id = $result->fetch_assoc()['id'];
+        echo "<br>";
+        echo "id is :" . $id;
+    }
+    else{
+        printf("Error message: %s\n", $database->error);
 
-    echo 'id is ' . $idUser;
+    }
 }
 
 ?>
