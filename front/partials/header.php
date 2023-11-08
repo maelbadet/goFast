@@ -2,8 +2,11 @@
 // le $root_url est a changer par l'url root dans votre navigateur (celui qui s'arrete au nom du projet)
 $root_url = "http://localhost/LiveCampus/php/cours_php_2/goFast/";
 $lien = "front/vue/mainPage.php";
-$lienIndex = $root_url . 'index.php';
-$liens = ["front/vue/mainPage.php", "index.php", "#"]
+$liens = [
+    ["name" => "crud", "url" => "front/vue/mainPage.php"],
+    ["name" => "Accueil", "url" => "index.php"],
+    ["name" => "Autre Lien", "url" => "#"]
+];
 ?>
 
 <!DOCTYPE html>
