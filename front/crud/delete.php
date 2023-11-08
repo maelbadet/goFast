@@ -1,6 +1,6 @@
 <?php include_once('../../front/partials/header.php'); ?>
 
-<?php require_once('../../back/listing/listing.php'); ?>
+<?php require_once('../../back/SQLRequest/listing.php'); ?>
 <p>
     Il faut ici avoir la possibilité de pouvoir supprimer un lien
 </p>
