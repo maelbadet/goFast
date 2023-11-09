@@ -1,5 +1,11 @@
 <?php include_once('../../front/partials/header.php'); ?>
 
-<p>
-    Ici, il faut pouvoir mettre à jour un lien donnée dans les cas ou l'url de base aurait changé
-</p>
+<?php require_once('../../back/SQLRequest/listing.php'); ?>
+<h1> Modification d'un lien</h1>
+
+<form action="../form/update-form.php" method="post">
+    <select name="lien_a_modifier">
+        <?php echo implode("\n", $options); ?>
+    </select>
+    <input type="submit" name="submit_update" value="Modifier">
+</form>
