@@ -1,9 +1,11 @@
 <?php
+include_once('../../front/partials/header.php');
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $originalLink = $_POST["original_link"];
-
+    
     // Générer un raccourci aléatoire avec random_bytes
     $shortLink = generateRandomShortLink();
+    
 
     // Vous pouvez enregistrer le lien d'origine et le raccourci dans une base de données
     // Remplacez les détails de la base de données par les vôtres

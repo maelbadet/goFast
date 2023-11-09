@@ -12,11 +12,8 @@ if ($query) {
        $link = $row['link'];
        $options[] = "<option value=\"$id\">$link</option>";
    }
-   
 } else {
    echo "Erreur dans la requête SQL : " . $database->error;
 }
-
-$database->close();
-
+$database->close(); 
 ?>
