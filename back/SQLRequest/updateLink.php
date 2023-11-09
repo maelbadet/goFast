@@ -1,7 +1,5 @@
 <?php
 include_once('../../front/partials/header.php');
-session_start();
-$_SESSION['id'] = 1;
 
 require_once('../../back/SQLRequest/listing.php');
 
