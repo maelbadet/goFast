@@ -1,7 +1,5 @@
-
-
-<?php include_once('../partials/header.php'); 
-
+<?php 
+include_once('../partials/header.php'); 
 $url_crud = $root_url ."front/crud/";
 $create = $url_crud . "create.php";
 $read = $url_crud . "read.php";
