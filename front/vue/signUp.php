@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    <h2 >Connexion à Gofast</h2>
+    <h2>Inscription à Gofast</h2>
     <div class="container">
-        <form action="../../back/account/actionlogin.php" method="post">
+        <form action="../../back/account/actionSignUp.php" method="post">
         <label for="email"><b>Email :</b></label>
         <input type="text" placeholder="email" name="email" required>
         <label for="psw"><b>Mot de Passe :</b></label>
         <input type="password" placeholder="mot de passe" name="psw" required>
-        <a href="./signUp.php">Pas encore de compte ?</a>
-        <button type="submit">Connexion</button>
+        <label for="confirmPsw"><b>Confirmez le mot de Passe :</b></label>
+        <input type="password" placeholder="mot de passe" name="confirmPsw" required>
+        <button type="submit">Inscription</button>
         </form>
     </div>
 </body>
