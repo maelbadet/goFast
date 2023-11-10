@@ -34,6 +34,7 @@
                         <p>Nouveau Lien d'origine : <a href="<?= $updatedLink ?>" target="_blank"><?= $updatedLink ?></a></p>
                         <p>Nouveau Lien raccourci : <a href="../../back/processing/redirect.php?short=<?= $shortLink ?>" target="_blank"><?= $shortLink ?></a></p>
                         <button class="btn btn-primary"><a href="../../index.php" class="text-white">Accueil</a></button>
+
                         <?php
                     } else {
                         throw new Exception("Erreur lors de la mise à jour du lien : " . $database->error);

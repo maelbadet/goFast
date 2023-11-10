@@ -20,7 +20,6 @@ if (isset($_GET["short"])) {
             $stmt->bind_result($originalLink, $clickCount);
             $stmt->fetch();
         
-            // Mettez à jour le compteur de clics
             $clickCount++;
             $updateQuery = "UPDATE url SET click = ? WHERE link_rewrite = ?";
             $updateStmt = $database->prepare($updateQuery);
