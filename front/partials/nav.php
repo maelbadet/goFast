@@ -20,7 +20,7 @@
         </li>
     </ul>
     <ul class="navbar-nav">
-    <a class="navbar-brand" href="<?= $root_url?>front/vue/login.php">Disconnect</a>
+    <a class="navbar-brand" href="<?= $root_url?>back/account/actionLogOut.php">Deconnexion</a>
     </ul>
     </div>
   </div>

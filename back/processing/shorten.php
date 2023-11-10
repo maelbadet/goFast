@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $shortLink = generateRandomShortLink();
     
     // Récupérer l'id de la session
-    session_start();
     $userId = isset($_SESSION['id']) ? $_SESSION['id'] : null;
 
     // Vérifier si l'id de la session est disponible

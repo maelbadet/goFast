@@ -16,13 +16,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit_update'])) {
     $query->close();
     ?>
 
-    <form action="../../back/SQLRequest/updateLink.php" method="post">
-        <input type="hidden" name="lien_a_modifier" value="<?= $lien_a_modifier ?>">
-        <p>Ancien URL : <?= $ancienLink ?></p>
-        <label for="url"><b>Nouvel URL :</b></label>
-        <input type="text" placeholder="URL" name="updated_link" required>
-        <button type="submit">Modifier le lien</button>
-    </form>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="../../back/SQLRequest/updateLink.php" method="post" class="mb-3">
+                    <input type="hidden" name="lien_a_modifier" value="<?= $lien_a_modifier ?>">
+                    <p class="mb-3">Ancien URL : <?= $ancienLink ?></p>
+                    <div class="mb-3">
+                        <label for="updated_link" class="form-label"><b>Nouvel URL :</b></label>
+                        <input type="text" placeholder="URL" name="updated_link" id="updated_link" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Modifier le lien</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <?php
 }
