@@ -12,7 +12,7 @@
         <form action="../../back/account/actionSignUp.php" method="post">
         <h2>Inscription à Gofast</h2>
         <label for="email"><b>Email :</b></label>
-        <input type="text" placeholder="email" name="email" required>
+        <input type="email" placeholder="email" name="email" required>
         <label for="psw"><b>Mot de Passe :</b></label>
         <input type="password" placeholder="mot de passe" name="psw" required>
         <label for="confirmPsw"><b>Confirmez le mot de Passe :</b></label>
