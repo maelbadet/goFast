@@ -17,7 +17,6 @@
     }
     $database->close();
 
-
 ?>
 
 <center>
@@ -26,8 +25,6 @@
 </h1>
 </center>
 </br>
-
-
 
 <table class="table table-striped table-dark">
   <thead>
