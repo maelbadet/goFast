@@ -8,12 +8,15 @@
         <div class="col-md-6">
             <form action="../../back/SQLRequest/deleteLink.php" method="post" class="mb-3">
                 <div class="mb-3">
-                    <label for="lien_a_supprimer" class="form-label">Sélectionnez le lien à supprimer :</label>
+                    <label for="lien_a_supprimer" class="form-label">Sélectionnez le lien à traiter :</label>
                     <select name="lien_a_supprimer" id="lien_a_supprimer" class="form-select">
                         <?php echo implode("\n", $options); ?>
                     </select>
                 </div>
-                <input type="submit" name="submit" value="Supprimer" class="btn btn-danger">
+                <div class="mb-3">
+                    <input type="submit" name="action" value="disable" class="btn btn-warning">
+                    <input type="submit" name="action" value="delete" class="btn btn-danger">
+                </div>
             </form>
         </div>
     </div>
