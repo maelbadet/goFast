@@ -4,12 +4,12 @@
 session_start();
 $_SESSION['id']= 1;
 
-$root_url = "http://localhost/LiveCampus/php/cours_php_2/goFast/";
+$root_url = "http://localhost/goFast/";
 $lien = "front/vue/mainPage.php";
 $liens = [
     ["name" => "crud", "url" => "front/vue/mainPage.php"],
     ["name" => "Accueil", "url" => "index.php"],
-    ["name" => "disconnect", "url" => "front/vue/login.php"]
+    ["name" => "déconnexion", "url" => "back/account/actionLogOut.php"]
 ];
 ?>
 
