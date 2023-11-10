@@ -15,6 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             foreach($result as $affiche){
                 $id = $affiche['id'];
             }
+            $query = "SELECT id FROM utilisateur WHERE email = ?";
+            $stmt = $database->prepare($query);
+            $stmt->bind_param("s", $emailUser);
+            $stmt->execute();
+            $stmt->bind_result($id);
+            $stmt->fetch();
+            $stmt->close();
         }catch(Exception $e){
             die('Erreur : ' . $e->getMessage() . " dans " . $e->getFile() . ":" . $e->getLine());
             header( "Location: ../../front/vue/signUp.php" );
