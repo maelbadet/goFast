@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    <h2 >Connexion à Gofast</h2>
+    
     <div class="container">
         <form action="../../back/account/actionlogin.php" method="post">
+        <h2 >Connexion à Gofast</h2>
         <label for="email"><b>Email :</b></label>
         <input type="text" placeholder="email" name="email" required>
         <label for="psw"><b>Mot de Passe :</b></label>
