@@ -16,6 +16,7 @@
         <input type="password" placeholder="mot de passe" name="psw" required>
         <label for="confirmPsw"><b>Confirmez le mot de Passe :</b></label>
         <input type="password" placeholder="mot de passe" name="confirmPsw" required>
+        <a href="./login.php">Déjà un compte ?</a>
         <button type="submit">Inscription</button>
         </form>
     </div>
