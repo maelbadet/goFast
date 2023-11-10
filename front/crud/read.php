@@ -38,10 +38,11 @@
     <tbody>
     <?php
         foreach ($data as $row): ?>
+        <?php var_dump($row) ?>
         <tr>
             <td><?= $row['id'] ?></td>
-            <td><a href=\"<?= $row['link'] ?>\" target=\"_blank\"> <?= $row['link'] ?></a></td>
-            <td><a <a href=\"redirect.php?short=<?= $row['link_rewrite'] ?>\" target=\"_blank\"><?= $row['link_rewrite'] ?></a></td>
+            <td><a href=<?= $row['link'] ?> target="_blank"> <?= $row['link'] ?></a></td>
+            <td><a href="<?= $root_url ?>back\processing\redirect.php?short=<?= $row['link_rewrite'] ?>" target="_blank\"><?= $row['link_rewrite'] ?></a></td>
             <td><?= $row['click'] ?></td>
         </tr>
         <?php endforeach; 
