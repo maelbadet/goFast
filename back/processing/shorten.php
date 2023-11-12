@@ -1,5 +1,9 @@
 <?php include_once('../../front/partials/header.php'); ?>
-
+<style>
+    .crud{
+        margin-bottom: 55vh;
+    }
+</style>
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -17,7 +21,7 @@
                 if ($userId !== null) {
                     // Vous pouvez enregistrer le lien d'origine, le raccourci et l'id de l'utilisateur dans la base de données
                     // Remplacez les détails de la base de données par les vôtres
-                    $database = new mysqli("localhost", "root", "", "gofast");
+                    $database = new mysqli($database_host, $database_user, $database_password, $database_name);
 
                     $query = "INSERT INTO url (link, link_rewrite, utilisateur_id) VALUES ('$originalLink', '$shortLink', '$userId')";
                     $result = $database->query($query);
@@ -48,8 +52,8 @@
                     <label for="original_link" class="form-label">Lien d'origine :</label>
                     <input type="text" name="original_link" id="original_link" class="form-control" placeholder="Entrez le lien à raccourcir" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Raccourcir à nouveaux</button>
-                <button class="btn btn-primary"><a href="../../index.php" class="text-white">Accueil</a></button>
+                <button type="submit" class="btn btn-primary crud">Raccourcir à nouveaux</button>
+                <button class="btn btn-primary crud"><a href="../../index.php" class="text-white">Accueil</a></button>
             </form>
         </div>
     </div>
@@ -60,3 +64,4 @@
     $bytes = random_bytes($length);
     return bin2hex($bytes);
 } ?>
+<?php include('../../front/partials/footer.php') ?>

@@ -1,6 +1,9 @@
 <?php include_once('../../front/partials/header.php'); ?>
-<?php require_once('../../back/SQLRequest/listing.php'); ?>
-
+<style>
+    .crud{
+        margin-bottom: 60vh;
+    }
+</style>
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -14,7 +17,7 @@
                     $updatedLink = $_POST['updated_link'];
                     $shortLink = generateRandomShortLink();
 
-                    $database = new mysqli("localhost", "root", "", "gofast");
+                    $database = new mysqli($database_host, $database_user, $database_password, $database_name);
                     if ($database->connect_error) {
                         throw new Exception("Connection failed: " . $database->connect_error);
                     }
@@ -33,7 +36,7 @@
                         </div>
                         <p>Nouveau Lien d'origine : <a href="<?= $updatedLink ?>" target="_blank"><?= $updatedLink ?></a></p>
                         <p>Nouveau Lien raccourci : <a href="../../back/processing/redirect.php?short=<?= $shortLink ?>" target="_blank"><?= $shortLink ?></a></p>
-                        <button class="btn btn-primary"><a href="../../index.php" class="text-white">Accueil</a></button>
+                        <button class="btn btn-primary crud"><a href="../../index.php" class="text-white">Accueil</a></button>
 
                         <?php
                     } else {

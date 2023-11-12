@@ -1,9 +1,13 @@
 <?php include_once('../../front/partials/header.php'); ?>
 <?php require_once('../../back/SQLRequest/listing.php'); ?>
-
+<style>
+    .crud{
+        height: 75vh;
+    }
+</style>
 <h1>Suppression d'un lien</h1>
 
-<div class="container mt-5">
+<div class="container mt-5 crud">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form action="../../back/SQLRequest/deleteLink.php" method="post" class="mb-3">
@@ -21,3 +25,4 @@
         </div>
     </div>
 </div>
+<?php include('../partials/footer.php') ?>

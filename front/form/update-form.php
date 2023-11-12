@@ -1,3 +1,8 @@
+<style>
+    .crud{
+        height: 80vh;
+    }
+</style>
 <?php
 // update-form.php
 
@@ -7,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit_update'])) {
     $lien_a_modifier = $_POST['lien_a_modifier'];
 
     // Récupérer l'URL correspondant à l'ID
-    $database = new mysqli("localhost", "root", "", "gofast");
+    $database = new mysqli($database_host, $database_user, $database_password, $database_name);
     $query = $database->prepare("SELECT link FROM url WHERE id = ?");
     $query->bind_param('i', $lien_a_modifier);
     $query->execute();
@@ -16,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit_update'])) {
     $query->close();
     ?>
 
-    <div class="container mt-5">
+    <div class="container mt-5 crud">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <form action="../../back/SQLRequest/updateLink.php" method="post" class="mb-3">
@@ -35,5 +40,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit_update'])) {
     <?php
 }
 
-include_once('../../front/partials/footer.php');
+include_once('../partials/footer.php');
 ?>

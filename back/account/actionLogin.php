@@ -1,11 +1,12 @@
 <?php
 session_start();
+include('../../front/partials/header.php');
 $emailUser = $_POST['email'];
 $mdpUser = $_POST['psw'];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $database = new mysqli("localhost", "root", "", "gofast");
+    $database = new mysqli($database_host, $database_user, $database_password, $database_name);
 
     try{
         $query = "SELECT id, mot_de_passe FROM utilisateur WHERE email = ?";

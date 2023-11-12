@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('../../front/partials/header.php');
 $emailUser = $_POST['email'];
 $mdpUser = $_POST['psw'];
 $confirmMdpUser = $_POST['confirmPsw'];
@@ -7,7 +8,7 @@ $id = 0;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $database = new mysqli("localhost", "root", "", "gofast");
+    $database = new mysqli($database_host, $database_user, $database_password, $database_name);
     if ($mdpUser==$confirmMdpUser) {
         try{
             $query = "SELECT * FROM utilisateur WHERE email = '".$emailUser."'";

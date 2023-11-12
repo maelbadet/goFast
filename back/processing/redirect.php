@@ -1,10 +1,11 @@
 <?php
+include('../../front/partials/header.php');
 if (isset($_GET["short"])) {
     $shortLink = $_GET["short"];
 
     // Effectuez une recherche dans la base de données pour trouver le lien d'origine associé au raccourci
     // Remplacez les détails de la base de données par les vôtres
-    $database = new mysqli("localhost", "root", "", "gofast");
+    $database = new mysqli($database_host, $database_user, $database_password, $database_name);
 
     // Utilisation d'une requête préparée
     $query = "SELECT link, click FROM url WHERE link_rewrite = ?";

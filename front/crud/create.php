@@ -1,8 +1,14 @@
+<style>
+    .crud{
+        height: 75vh;
+    }
+</style>
+
 <?php include_once('../../front/partials/header.php'); 
 $title = "Créer un lien raccourci"?>
 <h1><?=$title?></h1>
 
-<div class="container mt-5">
+<div class="container mt-5 crud">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form action="<?=$root_url?>back/processing/shorten.php" method="POST" class="mb-3">
@@ -15,3 +21,4 @@ $title = "Créer un lien raccourci"?>
         </div>
     </div>
 </div>
+<?php include('../partials/footer.php') ?>

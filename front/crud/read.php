@@ -1,10 +1,14 @@
 <?php include_once('../../front/partials/header.php'); ?>
-
+<style>
+    .crud{
+        height: 80vh;
+    }
+</style>
 <?php
-
-    $database = new mysqli("localhost", "root", "", "gofast");
-    $query = $database->query("SELECT * FROM url WHERE etat = 0"); //requete url valide
-    $query_disable = $database->query("SELECT * FROM url WHERE etat = 1"); //requete url desactivé
+    $user = $_SESSION["id"];
+    $database = new mysqli($database_host, $database_user, $database_password, $database_name);
+    $query = $database->query("SELECT * FROM url WHERE etat = 0 and utilisateur_id = $user"); //requete url liens activés
+    $query_disable = $database->query("SELECT * FROM url WHERE etat = 1 and utilisateur_id = $user"); //requete url désactivés
 
     if ($query)
     {
@@ -94,3 +98,5 @@
     ?>
     </tbody>
 </table>
+
+<?php include('../partials/footer.php') ?>

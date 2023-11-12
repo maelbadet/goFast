@@ -1,16 +1,25 @@
-<?php 
+<?php
 
-// le $root_url est a changer par l'url root dans votre navigateur (de http:// jusqu'à goFast/)
+
+$_SESSION['id']= 1;
+
+
+//========================================
+//variables a changé
 $root_url = "http://localhost/LiveCampus/php/cours_php_2/goFast/";
 
-session_start();
-$_SESSION['id']= 1;
+$database_host = "localhost";
+$database_user = "root";
+$database_password = "";
+$database_name = "gofast";
+// ======================================
+
 
 $lienCrud = [
     ["name" => "Créer", "url" => "front/crud/create.php"],
     ["name" => "Lire", "url" => "front/crud/read.php"],
     ["name" => "Mettre à jour", "url" => "front/crud/update.php"],
-    ["name" => "Supprimer", "url" => "front/crud/delete.php"],
+    ["name" => "Supprimer/désactiver", "url" => "front/crud/delete.php"],
 ]
 ?>
 

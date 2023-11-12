@@ -1,8 +1,8 @@
 <?php
-
 session_start();
+include('../../front/partials/header.php');
 
-$database = new mysqli("localhost", "root", "", "gofast");
+$database = new mysqli($database_host, $database_user, $database_password, $database_name);
 
 unset($_SESSION['id']);
 

@@ -3,7 +3,7 @@
 $userId = isset($_SESSION['id']) ? $_SESSION['id'] : null;
 
 if ($userId !== null) {
-    $database = new mysqli("localhost", "root", "", "gofast");
+    $database = new mysqli($database_host, $database_user, $database_password, $database_name);
 
     $query = $database->query("SELECT id, link FROM url WHERE utilisateur_id = $userId");
 
