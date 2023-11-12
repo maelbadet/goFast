@@ -53,7 +53,6 @@
     <tbody>
     <?php
         foreach ($data as $row): ?>
-        <?php var_dump($row) ?>
         <tr>
             <td><?= $row['id'] ?></td>
             <td><a href=<?= $row['link'] ?> target="_blank"> <?= $row['link'] ?></a></td>
