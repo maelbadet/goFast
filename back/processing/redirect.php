@@ -1,17 +1,15 @@
 <?php
-
 if (isset($_GET["short"])) {
-    
     $shortLink = $_GET["short"];
 
     // Effectuez une recherche dans la base de données pour trouver le lien d'origine associé au raccourci
     // Remplacez les détails de la base de données par les vôtres
     $database = new mysqli("localhost", "root", "", "gofast");
-    
+
     // Utilisation d'une requête préparée
-    $query = "SELECT link FROM url WHERE link_rewrite = ?";
+    $query = "SELECT link, click FROM url WHERE link_rewrite = ?";
     $stmt = $database->prepare($query);
-    
+
     if ($stmt) {
         // Lier la valeur du raccourci
         $stmt->bind_param("s", $shortLink);
@@ -19,9 +17,19 @@ if (isset($_GET["short"])) {
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            $stmt->bind_result($originalLink);
+            $stmt->bind_result($originalLink, $clickCount);
             $stmt->fetch();
-
+        
+            $clickCount++;
+            $updateQuery = "UPDATE url SET click = ? WHERE link_rewrite = ?";
+            $updateStmt = $database->prepare($updateQuery);
+        
+            if ($updateStmt) {
+                $updateStmt->bind_param("is", $clickCount, $shortLink);
+                $updateStmt->execute();
+                $updateStmt->close();
+            }
+        
             // Redirigez l'utilisateur vers le lien d'origine
             http_response_code(301);
             header("Location: $originalLink");
@@ -31,7 +39,7 @@ if (isset($_GET["short"])) {
             http_response_code(404);
             echo "Lien raccourci invalide.";
         }
-        
+
         $stmt->close();
     } else {
         // Gérer l'erreur de préparation de la requête
@@ -39,5 +47,4 @@ if (isset($_GET["short"])) {
         echo "Erreur de préparation de la requête.";
     }
 }
-
 ?>

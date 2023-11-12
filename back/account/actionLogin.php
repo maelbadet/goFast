@@ -1,19 +1,32 @@
 <?php
+session_start();
+$emailUser = $_POST['email'];
+$mdpUser = $_POST['psw'];
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $emailUser = $_POST['email'];
-    $mdpUser = $_POST['psw'];
 
     $database = new mysqli("localhost", "root", "", "gofast");
 
-    echo " email : " . $emailUser;
-    echo "<br>";
-    echo " password : " . $mdpUser;
-
-    $result = $database->query("SELECT * FROM utilisateur WHERE email = "$emailUser" AND mot_de_passe = " $mdpUser);
-    $test = $result->fetch_assoc();
-    $idUser = $result[0]['id'];
-
-    echo 'id is ' . $idUser;
+    try{
+        $query = "SELECT id, mot_de_passe FROM utilisateur WHERE email = ?";
+        $stmt = $database->prepare($query);
+        $stmt->bind_param("s", $emailUser);
+        $stmt->execute();
+        $stmt->bind_result($id, $mdpBDD);
+        $stmt->fetch();
+        $stmt->close();
+    }catch(Exception $e){
+        die('Erreur : ' . $e->getMessage() . " dans " . $e->getFile() . ":" . $e->getLine());
+        header( "Location: ../../front/vue/login.php" );
+        
+    }
+    if (password_verify($mdpUser, $mdpBDD)) {
+        $_SESSION['id']= $id;
+        header("Location: ../../front/vue/mainPage.php");
+        
+    } else {
+        header( "Location: ../../front/vue/login.php" );
+    }
 }
 
 ?>

@@ -1,4 +1,10 @@
+<?php
+session_start();
 
-<?php include_once('front/partials/header.php'); ?>
-
-<p>mettre ici les valeurs pour la connexion connexion</p>
+if($_SESSION['id']==''){
+    header("Location: front/vue/login.php");
+}
+else{
+    header("Location: front/vue/mainPage.php");
+}
+?>
