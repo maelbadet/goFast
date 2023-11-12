@@ -10,7 +10,7 @@ Elle permet de faire en sorte que la barre de navigation sooit fonctionnelle.
 il faut crée une base du nom que vousle souhaitez mais notre application s'appelant goFast, nous avons nommé la base de la même manière
 Pour créer la base de donnée, vous pouvez utilisé le dossier BDD contenant les différentes tables de la base de donnée:
 
-# les différentes vairables de base : 
+# les différentes variables de base : 
 Dans les diférentes variables de bases : 
 $database_host : l'host de la base de donnée ( pour nous localhost),
 $database_user : l'identifiant de connexion a la base de donnée,
