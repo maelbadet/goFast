@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\back",
-    "\\back\\crud",
     "\\back\\processing",
+    "\\back\\SQLRequest",
     "\\BDD",
-    "\\config",
     "\\front",
     "\\front\\css",
+    "\\front\\form",
     "\\front\\partials",
     "\\front\\vue"
   ],
-  "SelectedNode": "\\front\\partials\\footer.php",
+  "SelectedNode": "\\BDD\\bdd.sql",
   "PreviewInSolutionExplorer": false
 }
